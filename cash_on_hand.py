@@ -1,2 +1,2 @@
-import csv, api
+import csv
 from pathlib import Path

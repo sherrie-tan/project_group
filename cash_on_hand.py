@@ -26,6 +26,11 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         if sublist < 0:
             print(sublist)
 
+fp = Path.cwd()/"project_group"/"summary_report.txt"
+ 
+with fp.open(mode="w", encoding="UTF-8", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["CASH DEFICT"])
 
 
 

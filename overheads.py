@@ -1,6 +1,11 @@
 import csv
 from pathlib import Path
 fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
-print(fp.exists())
 
+
+fp = Path.cwd()/"project_group"/"summary_report.txt"
+ 
+with fp.open(mode="w", encoding="UTF-8", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["HIGHEST OVERHEADS"])
 

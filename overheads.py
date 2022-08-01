@@ -2,14 +2,17 @@ import csv
 from pathlib import Path
 
 fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
-print(fp.exists())
+
 
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
-     reader = csv.reader(file)
-     next(reader)
-     overheads_list = []
+    reader = csv.reader(file)
+    next(reader)
 
-     print(overheads_list)
+    overheads_list = []
+    for line in reader:
+        overheads_list.append(line)
+
+    print(overheads_list)
     
 
     

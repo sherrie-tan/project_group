@@ -2,6 +2,8 @@ import csv
 from pathlib import Path
 
 fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
+fp_write = Path.cwd()/"summary_report.txt"
+fp_write.touch()
 
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
@@ -17,7 +19,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         overheads_list_USD.append(float(sublist[1]))
         category_list.append((sublist[0]))
     
-
+    
     print(max(overheads_list_USD))
     print(max(category_list))
     

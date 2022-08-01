@@ -32,4 +32,8 @@ highest_overheads_SGD = max(overheads_list_USD)
 fp = Path.cwd()/"project_group"/"summary_report.txt"
  
 with fp.open(mode="a", encoding="UTF-8", newline="") as file:
-    file.write(f"[HIGHEST OVERHEADS] SALARY EXPENSE {highest_overheads}")
+    file.write(f"\n[HIGHEST OVERHEADS] SALARY EXPENSE {highest_overheads}")
+    
+
+
+    

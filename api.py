@@ -14,7 +14,7 @@ def api_function():
 
     for value in CURRENCY_EXCHANGE_RATE:
     
-        exchange_rate = float(CURRENCY_EXCHANGE_RATE[value]["5. Exchange Rate"])
+        CURRENCY_EXCHANGE_RATE = float(CURRENCY_EXCHANGE_RATE[value]["5. Exchange Rate"])
         from_currency = CURRENCY_EXCHANGE_RATE[value]["1. From_Currency Code"]
         to_currency = CURRENCY_EXCHANGE_RATE[value]["3. To_Currency Code"]
 
@@ -22,5 +22,5 @@ def api_function():
     fp = Path.cwd()/"project_group"/"summary_report.txt"
 
     with fp.open(mode="w",encoding="UTF-8",newline="") as file:
-        file.write("[REAL TIME CURRENCY CONVERSION RATE]" " " f"{from_currency}1 = SGD{exchange_rate}")
+        file.write("[REAL TIME CURRENCY CONVERSION RATE]" " " f"{from_currency}1 = {to_currency}{CURRENCY_EXCHANGE_RATE}")
 

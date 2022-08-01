@@ -24,11 +24,13 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         overheads_list_USD.append(float(sublist[1]))
         category_list.append((sublist[0]))
     
+    maxValue = max(overheads_list_USD)
+    maxValueIndex = overheads_list_USD.index(maxValue)
+    print(category_list[maxValueIndex])
+    print(maxValue)
+    # print((category_list))
     
-    print(max(overheads_list_USD))
-    print((category_list))
     
-# highest_overheads = max(overheads_list_USD)
 # highest_overheads_SGD = max(overheads_list_USD)
     
 
@@ -36,3 +38,4 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
  
 # with fp.open(mode="a", encoding="UTF-8", newline="") as file:
     # file.write(f"[HIGHEST OVERHEADS] SALARY EXPENSE SGD{highest_overheads}")
+

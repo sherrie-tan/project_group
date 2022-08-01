@@ -7,12 +7,13 @@ fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader)
-
     overheads_list = []
-    for line in reader:
-        overheads_list.append(line)
 
-    print(overheads_list)
+    for line in reader:
+         overheads_list.append(line)
+    
+
+print(max(overheads_list))
     
 
     

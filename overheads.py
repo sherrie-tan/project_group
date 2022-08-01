@@ -1,16 +1,16 @@
 import csv
 from pathlib import Path
 
-def overhead_function():
-    fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
+fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
+print(fp.exists())
 
-    with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+with fp.open(mode="r", encoding="UTF-8", newline="") as file:
      reader = csv.reader(file)
      next(reader)
-     data = list(reader)
+     overheads_list = []
 
-     print(data)
-
+     print(overheads_list)
+    
 
     
 

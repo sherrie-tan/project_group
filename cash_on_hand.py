@@ -18,11 +18,13 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     for sublist in coh_list:
         coh_amt_list.append(int(sublist[1]))
         day_list.append(int(sublist[0]))
+    
+    diff_list = []
 
-
-    zipped_list = zip(coh_amt_list[:-1], coh_amt_list[1:])
-    diff_list = [next_element - first_element for first_element, next_element in zipped_list]
+    for n in range(1, len(coh_amt_list)):
+        diff_list.append(coh_amt_list[n] - coh_amt_list[n-1])
     print(diff_list)
+    
     
     for item in zip(day_list, diff_list):
         print(item)

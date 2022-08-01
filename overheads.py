@@ -1,12 +1,13 @@
 import csv
 from pathlib import Path
 fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
-
+fp_write = Path.cwd()/"summary_report.txt"
+# fp_write.touch()
 
 # def overhead_function(forex):
 fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
-
-
+fp_write = Path.cwd()/"summary_report.txt"
+# fp_write.touch()
 
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
@@ -36,7 +37,5 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 fp = Path.cwd()/"project_group"/"summary_report.txt"
  
 with fp.open(mode="a", encoding="UTF-8", newline="") as file:
-
     file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{maxValue}")
-
 

@@ -29,7 +29,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     print(category_list[maxValueIndex])
     print(maxValue)
     
-    
+    # USD_to_SGD = 
     
 # highest_overheads_SGD = max(overheads_list_USD)
     
@@ -37,5 +37,5 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 fp = Path.cwd()/"project_group"/"summary_report.txt"
  
 with fp.open(mode="a", encoding="UTF-8", newline="") as file:
-    file.write(f"[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{maxValue}")
+    file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{maxValue}")
 

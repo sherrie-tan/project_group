@@ -5,8 +5,7 @@ fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
 
 # def overhead_function(forex):
 fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
-fp_write = Path.cwd()/"summary_report.txt"
-fp_write.touch()
+
 
 
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:

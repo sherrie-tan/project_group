@@ -4,9 +4,9 @@ fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
 fp_write = Path.cwd()/"summary_report.txt"
 # fp_write.touch()
 
-# def overhead_function(forex):
-fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
-fp_write = Path.cwd()/"summary_report.txt"
+def overhead_function(forex):
+  fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
+  fp_write = Path.cwd()/"summary_report.txt"
 # fp_write.touch()
 
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
@@ -26,12 +26,11 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     
     maxValue = max(overheads_list_USD)
     maxValueIndex = overheads_list_USD.index(maxValue)
-    print(category_list[maxValueIndex])
-    print(maxValue)
+    # print(category_list[maxValueIndex])
+    # print(maxValue)
+
     
-    # USD_to_SGD = 
-    
-# highest_overheads_SGD = max(overheads_list_USD)
+    # USD_to_SGD = maxValue*forex
     
 
 fp = Path.cwd()/"project_group"/"summary_report.txt"

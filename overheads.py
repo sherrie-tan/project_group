@@ -1,13 +1,11 @@
 import csv
 from pathlib import Path
 fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
-fp_write = Path.cwd()/"summary_report.txt"
-fp_write.touch()
+
 
 def overhead_function(forex):
     fp = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
-    fp_write = Path.cwd()/"summary_report.txt"
-    fp_write.touch()
+
 
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)

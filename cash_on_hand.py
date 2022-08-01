@@ -1,6 +1,8 @@
 import csv
 from pathlib import Path
 
+
+
 fp_read = Path.cwd()/"project_group"/"csv_reports"/"Cash on Hand.csv"
 fp_write = Path.cwd()/"project_group"/"summary_report.txt"
 #print(fp)
@@ -30,10 +32,11 @@ def cash_on_hand_function(forex):
             diff_list.append(coh_amt_list[n] - coh_amt_list[n-1])
         print(diff_list)
         
-        for sublist in diff_list:
-            coh_sgd = sublist*forex
+        
+        
     
     with fp_write.open(mode="a", encoding="UTF-8", newline="") as file: 
+        
         for item in zip(day_list, diff_list):
             if item[1] < 0:
                 file.write("\n[CASH DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD{coh_sgd}")

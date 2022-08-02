@@ -33,8 +33,6 @@ def cash_on_hand_function(forex):
         print(diff_list)
         
 
-        for sublist in diff_list:
-            coh_sgd = sublist*forex
         
     with fp_write.open(mode="a", encoding="UTF-8", newline="") as file: 
         

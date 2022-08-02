@@ -17,7 +17,7 @@ def api_function():
         from_currency = CURRENCY_EXCHANGE_RATE[value]["1. From_Currency Code"]
         to_currency = CURRENCY_EXCHANGE_RATE[value]["3. To_Currency Code"]
 
-#print(type(function))   
+    
     
     fp = Path.cwd()/"project_group"/"summary_report.txt"
 

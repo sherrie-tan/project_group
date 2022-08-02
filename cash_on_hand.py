@@ -32,6 +32,7 @@ def cash_on_hand_function(forex):
             diff_list.append(coh_amt_list[n] - coh_amt_list[n-1])
         print(diff_list)
         
+
         for sublist in diff_list:
             coh_sgd = sublist*forex
         

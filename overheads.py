@@ -34,8 +34,8 @@ def overhead_function(forex):
     # USD_to_SGD = maxValue*forex
     
 
-    fp = Path.cwd()/"project_group"/"summary_report.txt"
+    #fp = Path.cwd()/"project_group"/"summary_report.txt"
  
-with fp.open(mode="a", encoding="UTF-8", newline="") as file:
-    file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{maxValue}")
+#with fp.open(mode="a", encoding="UTF-8", newline="") as file:
+    #file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{maxValue}")
 

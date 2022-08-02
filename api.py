@@ -12,15 +12,14 @@ def api_function():
     print(CURRENCY_EXCHANGE_RATE)
 
     for value in CURRENCY_EXCHANGE_RATE:
-        
-        function = float(CURRENCY_EXCHANGE_RATE[value]["5. Exchange Rate"])
+        forex = float(CURRENCY_EXCHANGE_RATE[value]["5. Exchange Rate"])
         from_currency = CURRENCY_EXCHANGE_RATE[value]["1. From_Currency Code"]
         to_currency = CURRENCY_EXCHANGE_RATE[value]["3. To_Currency Code"]
 
-    
+    forex = forex
     
     fp = Path.cwd()/"project_group"/"summary_report.txt"
 
     with fp.open(mode="w",encoding="UTF-8",newline="") as file:
-        file.write("[REAL TIME CURRENCY CONVERSION RATE]" " " f"{from_currency}1 = {to_currency}{function}")
+        file.write("[REAL TIME CURRENCY CONVERSION RATE]" " " f"{from_currency}1 = {to_currency}{forex}")
 

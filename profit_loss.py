@@ -32,13 +32,9 @@ def profitloss_function(forex):
             diff_list.append(net_profit_list[n] - net_profit_list[n-1])
         print(diff_list)
 
-        for sublist in diff_list:
-            profit_loss_sgd = sublist*forex
+        #for sublist in diff_list:
+            #profit_loss_sgd = sublist*forex
 
-        with fp_write.open(mode="a", encoding="UTF-8", newline="") as file: 
-        
-            for item in zip(day_list, diff_list):
-                if item[1] < 0:
-                    file.write("\n[PROFIT DEFICIT]" " " f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD{profit_loss_sgd}")
+
 
         # not done

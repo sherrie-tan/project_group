@@ -4,7 +4,7 @@ from pathlib import Path
 fp_read = Path.cwd()/"project_group"/"csv_reports"/"Profits and Loss.csv"
 fp_write = Path.cwd()/"project_group"/"summary_report.txt"
     
-def cash_on_hand_function(forex):
+def profitloss_function(forex):
     fp_read = Path.cwd()/"project_group"/"csv_reports"/"Profits and Loss.csv"
     fp_write = Path.cwd()/"project_group"/"summary_report.txt"
     

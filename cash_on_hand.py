@@ -88,7 +88,7 @@ def cash_on_hand_function(forex):
                     file.write("\n[CASH DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {item[1]*forex}")
  
 
-print(cash_on_hand_function)
+
 
 
 

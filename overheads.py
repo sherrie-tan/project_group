@@ -60,7 +60,7 @@ def overhead_function(forex):
         # open the summary_report txt file and use append mode 
     with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
             # use .write() to append the highest overheads category and value to the summary_report txt file
-            file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{maxValue}")
+            file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{maxValue*forex}")
  
         
 

@@ -2,7 +2,6 @@
 import csv
 from pathlib import Path
 
-
 # assign fp_read to Cash on Hand.csv file to read data in csv file
 # assign fp to summary_report.txt file to append cash deficit in
 fp_read = Path.cwd()/"project_group"/"csv_reports"/"Cash on Hand.csv"

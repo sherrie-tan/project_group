@@ -30,7 +30,10 @@ def overhead_function(forex):
     print(category_list[maxValueIndex])
     print(maxValue)
 
-    
+    with fp_write.open(mode="a", encoding="UTF-8",newline="") as file:
+        file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}:SGD{overheads_SGD}")
+
+
     #overheads_SGD = maxValue*forex
     
  

@@ -43,7 +43,7 @@ def cash_on_hand_function(forex):
         # create empty list to store difference calculated in coh amount 
         diff_list = []
         
-        # reate empty_list to sotre api 
+        # create empty_list to store api 
         empty_list = []
         
         # .open() txt file to read it 

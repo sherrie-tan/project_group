@@ -1,7 +1,7 @@
-# import modules 
+# importing modules 
 import api, cash_on_hand, overheads, profit_loss
 
-# define modules
+# defining modules using docstring
 def main(): 
     """
     This function will execute the codes in each module and write data 

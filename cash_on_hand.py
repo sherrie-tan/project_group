@@ -49,12 +49,11 @@ def cash_on_hand_function(forex):
             api_get = file.read()
             api_list.append(api_get)
 
-            for info, content in enumerate(api_list):
-                forex = re.search(pattern="SGD.+\d", string=content)
+            for info, value in enumerate(api_list):
+                forex = re.search(pattern="SGD.+\d", string=value)
                 forex = forex.group()
                 forex = float(forex[3:10])
                 
- 
         # range() and len() used to keep track of number of iterations to do 
             for n in range(1, len(coh_amt_list)):
             # subtract values using their index positions and appending the result of each subtraction to diff_list using .append()

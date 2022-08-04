@@ -54,4 +54,4 @@ def profitloss_function(forex):
 
             # if difference in diff_list is less than zero, write it into the txt file 
             if item[1] > 0:
-                file.write("\n[PROFIT DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD{item[1]}")
+                file.write("\n[PROFIT DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {item[1]}")

@@ -48,7 +48,7 @@ def cash_on_hand_function(forex):
         for n in range(1, len(coh_amt_list)):
             # subtract values using their index positions and appending the result of each subtraction to diff_list using .append()
             diff_list.append(coh_amt_list[n-1] - coh_amt_list[n])
-
+        
     # .open() to open summary_report.txt to append cash deficit into it 
     with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
             

@@ -33,17 +33,7 @@ def api_function():
         # assign forex to to_currency symbol extracted from CURRENCY_EXCHANGE_RATE
         to_currency = CURRENCY_EXCHANGE_RATE[value]["3. To_Currency Code"]
         
-        # .append() to append forex into empty list: forex_list 
-        # float() to convert decimals into float literal 
-        forex_list.append(float(forex))
-       
-        # for loop to execute data from each item 
-        for sublist in forex_list:
-            # assign forex_actual to be equals to forex
-            forex_actual = sublist
 
-
-   
     # assign fp to file path of summary_report.txt
     fp = Path.cwd()/"project_group"/"summary_report.txt"
     

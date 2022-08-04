@@ -1,4 +1,4 @@
-# import csv and Path 
+# import csv and Path from pathlib
 import csv
 from pathlib import Path
 

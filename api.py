@@ -18,7 +18,11 @@ def api_function():
     
     fp = Path.cwd()/"project_group"/"summary_report.txt"
     with fp.open(mode="w", encoding="UTF-8",newline="") as file:
+<<<<<<< HEAD
             file.write("[REAL TIME CURRENCY CONVERSION RATE]" " "f"{from_currency}1 = {to_currency}{forex}")
+=======
+        file.write("[REAL TIME CURRENCY CONVERSION RATE]" " "f"{from_currency}1 = {to_currency}{forex}")
+>>>>>>> 9fbe0824c7ca275ce42a5e9ec7f698af69ce41ea
 
   
 

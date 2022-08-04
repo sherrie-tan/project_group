@@ -57,6 +57,16 @@ def profitloss_function(forex):
             forex = forex.group()
             forex = float(forex[3:10])
 
+        profitloss_list = []
+        with fp_write.open(mode="r", encoding="UTF-8") as file:
+            api = file.read()
+            profitloss_list.append(api)
+
+        for info, value in enumerate(profitloss_list):
+            forex = re.search(pattern="SGD.+\d", string=value)
+            forex = forex.group()
+            forex = float(forex[3:10])
+
     # using .open() to open summary_report.txt file to append profit deficit into it 
     with fp_write.open(mode="a", encoding="UTF-8",newline="")as file:
 

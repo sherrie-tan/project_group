@@ -47,14 +47,25 @@ def profitloss_function(forex):
         for n in range(1, len(net_profit_list)):
             diff_list.append(net_profit_list[n-1] - net_profit_list[n])
         
+        # create empty list profitloass_list to store api 
         profitloss_list = []
         with fp_write.open(mode="r", encoding="UTF-8") as file:
+            
+            # assign api to file.read(api)
             api = file.read()
+            
+            # append the api into empty_list
             profitloss_list.append(api)
+        
 
+        # for loop to iterate iterables in empty_list  
+        # enumerate() to return sequence in empty_list 
         for info, value in enumerate(profitloss_list):
-            forex = re.search(pattern="SGD.+\d", string=value)
+            
+            # re.search to find the exchange rate in the api
+            forex = re.search(pattern="SGD.+", string=value)
             forex = forex.group()
+            # exchange rate at position 3:10 in forex
             forex = float(forex[3:10])
 
         profitloss_list = []
@@ -75,4 +86,4 @@ def profitloss_function(forex):
 
             # if difference in diff_list is less than zero, write it into the txt file 
             if item[1] > 0:
-                file.write("\n[PROFIT DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {item[1]}")
+                file.write("\n[PROFIT DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {item[1]*forex}")

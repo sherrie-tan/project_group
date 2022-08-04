@@ -1,5 +1,6 @@
 import csv
 from pathlib import Path
+import re
 
 # creating fp_read to read the csv file
 fp_read = Path.cwd()/"project_group"/"csv_reports"/"Profits and Loss.csv"
@@ -46,6 +47,16 @@ def profitloss_function(forex):
         for n in range(1, len(net_profit_list)):
             diff_list.append(net_profit_list[n-1] - net_profit_list[n])
         
+        profitloss_list = []
+        with fp_write.open(mode="r", encoding="UTF-8") as file:
+            api = file.read()
+            profitloss_list.append(api)
+
+        for info, value in enumerate(profitloss_list):
+            forex = re.search(pattern="SGD.+\d", string=value)
+            forex = forex.group()
+            forex = float(forex[3:10])
+
     # using .open() to open summary_report.txt file to append profit deficit into it 
     with fp_write.open(mode="a", encoding="UTF-8",newline="")as file:
 

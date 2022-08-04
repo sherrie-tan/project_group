@@ -45,11 +45,11 @@ def overhead_function(forex):
 
         # assign overheads_SGD as the variable used to store the overheads amount in SGD 
         # by multiplying the value with forex which is contains the currency conversion
-        overheads_SGD = maxValue*forex
+        #overheads_SGD = maxValue*forex
         # open the summary_report txt file and use append mode 
         with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
             # use .write() to append the highest overheads category and value to the summary_report txt file
-            file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{overheads_SGD}")
+            file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{maxValue}")
  
         
 

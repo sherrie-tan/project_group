@@ -30,6 +30,10 @@ def cash_on_hand_function(forex):
             diff_list.append(coh_amt_list[n-1] - coh_amt_list[n])
         print(diff_list)
         
+    with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
+            for item in zip(day_list, diff_list):
+                if item[1] > 0:
+                    file.write("\n[CASH DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {item[1]}")
 
 
 

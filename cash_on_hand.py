@@ -67,7 +67,6 @@ def cash_on_hand_function(forex):
 
 
 
-
       
 
     

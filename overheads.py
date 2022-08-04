@@ -1,6 +1,7 @@
 import csv
 from pathlib import Path
-# create file path to read csv file
+
+# creating the file path to read csv file
 fp_read = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
 # create file path to write to summary report text file 
 fp_write = Path.cwd()/"project_group"/"summary_report.txt"

@@ -44,15 +44,15 @@ def overhead_function(forex):
         # that has the highest value 
         maxValueIndex = overheads_list_USD.index(maxValue)
         
-        # create empty list to store api
+        # creating an empty list to store api
         overheads_list = []
         
-        # open txt file as read mode to append api into it 
+        # opening txt file as read mode to append api into it 
         with fp_write.open(mode="r", encoding="UTF-8") as file:
             api = file.read()
             overheads_list.append(api)
         
-        # for loop to iterate iterables in empty_list  
+        # using for loop to iterate iterables in empty_list  
         # enumerate() to return sequence in empty_list 
         for info, value in enumerate(overheads_list):
             # re.search to find the exchange rate in the api

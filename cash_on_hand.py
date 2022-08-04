@@ -40,24 +40,39 @@ def cash_on_hand_function(forex):
             coh_amt_list.append(int(sublist[1]))
             day_list.append(int(sublist[0]))
         
-
         # create empty list to store difference calculated in coh amount 
         diff_list = []
         
-        api_list = []
+        # reate empty_list to sotre api 
+        empty_list = []
+        
+        # .open() txt file to read it 
         with fp_write.open(mode="r", encoding="UTF-8") as file:
+            
+            # assign api to file.read(api)
             api = file.read()
-            api_list.append(api)
-
-            for info, value in enumerate(api_list):
-                forex = re.search(pattern="SGD.+\d", string=value)
+            
+            # append the api into empty_list 
+            empty_list.append(api)
+            
+            # for loop to iterate iterables in empty_list  
+            # enumerate() to return sequence in empty_list 
+            for sublist, value in enumerate(empty_list):
+                
+                # re.search to find the exchange rate in the api 
+                forex = re.search(pattern="SGD.+", string=value)
+                
                 forex = forex.group()
+                
+                # exchange rate at position 3:10 in forex 
                 forex = float(forex[3:10])
                 
         # range() and len() used to keep track of number of iterations to do 
             for n in range(1, len(coh_amt_list)):
             # subtract values using their index positions and appending the result of each subtraction to diff_list using .append()
                 diff_list.append(coh_amt_list[n-1] - coh_amt_list[n])
+                
+                # multiply amt in diff_list with forex to convert USD to SGD
                 coh_sgd = diff_list[-1] * forex
     
     # .open() to open summary_report.txt to append cash deficit into it 

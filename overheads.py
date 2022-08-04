@@ -22,21 +22,19 @@ def overhead_function(forex):
         for sublist in main_overheads_list:
             overheads_list_USD.append(float(sublist[1]))
             category_list.append((sublist[0]))
-        print(overheads_list_USD)
-        print(category_list)
+            # print(overheads_list_USD)
+            # print(category_list)
 
-    maxValue = max(overheads_list_USD)
-    maxValueIndex = overheads_list_USD.index(maxValue)
-    print(category_list[maxValueIndex])
-    print(maxValue)
+        maxValue = max(overheads_list_USD)
+        maxValueIndex = overheads_list_USD.index(maxValue)
+        # print(category_list[maxValueIndex])
+        # print(maxValue)
 
-    #with fp_write.open(mode="a", encoding="UTF-8",newline="") as file:
-        #file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}:SGD{}")
-
-
-    #overheads_SGD = maxValue*forex
     
+        overheads_SGD = maxValue*forex
+        with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
+            file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{overheads_SGD}")
  
-    
+        
 
 

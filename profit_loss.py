@@ -42,14 +42,16 @@ def profitloss_function(forex):
         # creating an empty sublist to store the difference in net profit
         diff_list = []
 
-        # range() and len() used to keep track of number of iterations to do
+        # using range() and len() to keep track of the number of iterations to do
         for n in range(1, len(net_profit_list)):
             diff_list.append(net_profit_list[n-1] - net_profit_list[n])
         
-    # .open() to open summary_report.txt to append profit deficit into it 
+    # using .open() to open summary_report.txt file to append profit deficit into it 
     with fp_write.open(mode="a", encoding="UTF-8",newline="")as file:
-        # zip() to iterate over iterables in day_list and diff_list in parallel 
+
+        # using zip() to iterate over iterables in day_list and diff_list in parallel 
         for item in zip(day_list, diff_list):
+
             # if difference in diff_list is less than zero, write it into the txt file 
             if item[1] > 0:
                 file.write("\n[PROFIT DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD{item[1]}")

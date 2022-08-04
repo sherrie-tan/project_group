@@ -30,8 +30,6 @@ def cash_on_hand_function(forex):
             diff_list.append(coh_amt_list[n-1] - coh_amt_list[n])
         print(diff_list)
         
-        forex = float(forex)
-        for sublist in diff_list
     
     with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
             for item in zip(day_list, diff_list):

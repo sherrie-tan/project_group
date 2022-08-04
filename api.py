@@ -41,8 +41,8 @@ def api_function():
         for sublist in forex_list:
             # assign forex_actual to be equals to forex
             forex_actual = sublist
-
-
+        
+        
     # assign fp to file path of summary_report.txt
     fp = Path.cwd()/"project_group"/"summary_report.txt"
     
@@ -52,7 +52,7 @@ def api_function():
         file.write("[REAL TIME CURRENCY CONVERSION RATE]" " "f"{from_currency}1 = {to_currency}{forex}")
 
 
-  
+
 
 
    

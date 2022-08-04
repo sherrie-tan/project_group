@@ -1,13 +1,13 @@
-# import csv and Path from pathlib
+# importing csv and Path from pathlib
 import csv, re
 from pathlib import Path
 
-# assign fp_read to Cash on Hand.csv file to read data in csv file
-# assign fp to summary_report.txt file to append cash deficit in
+# assigning fp_read to Cash on Hand.csv file to read data in csv file
+# assigning fp to summary_report.txt file to append cash deficit in
 fp_read = Path.cwd()/"project_group"/"csv_reports"/"Cash on Hand.csv"
 fp_write = Path.cwd()/"project_group"/"summary_report.txt"
 
-# def cash_on_hand_function with parameter "forex"
+# creating function cash_on_hand_function with parameter "forex"
 def cash_on_hand_function(forex):
     """
     This function will compute the difference in cash on hand and highlight 
@@ -16,50 +16,51 @@ def cash_on_hand_function(forex):
     fp_read = Path.cwd()/"project_group"/"csv_reports"/"Cash on Hand.csv"
     fp_write = Path.cwd()/"project_group"/"summary_report.txt"
     
-    # open the Cash on Hand.csv as file as read mode to read the data in it 
+    # opening the Cash on Hand.csv as file as read mode to read the data in it 
     with fp_read.open(mode="r", encoding="UTF-8", newline="") as file:
-        # assign csv.reader to reader, to read the file 
+        # assigning csv.reader to reader, to read the file 
         reader = csv.reader(file)
         
         # skip reading the headers
         next(reader)
         
-        # create empty list to store data from csv.file
+        # creating empty list to store data from csv.file
         coh_list = []
         
-        # .append() used to extract data and store into coh_list
+        # using .append() to extract data and store into coh_list
         for line in reader:
             coh_list.append(line)
         
-        # create empty list day_list and coh_amt_list to store the day and coh amt respectively 
+        # creating empty list day_list and coh_amt_list to store the day and coh amt respectively 
         day_list = []
         coh_amt_list = []
         
-        # .append() the respective values into the empty list created before
+        # appending the respective values into the empty list created before using .append()
         for sublist in coh_list:
             coh_amt_list.append(int(sublist[1]))
             day_list.append(int(sublist[0]))
         
-        # create empty list to store difference calculated in coh amount 
+        # creating empty list to store difference calculated in coh amount 
         diff_list = []
         
-        # create empty_list to store api 
+        # creating empty_list to store api 
         empty_list = []
         
-        # .open() txt file to read it 
+        # using .open() to open txt file
+        # opening file in read mode to read it 
         with fp_write.open(mode="r", encoding="UTF-8") as file:
             
-            # assign api to file.read(api)
+            # assigning api to file.read(api)
             api = file.read()
             
-            # append the api into empty_list 
+            # appending the api into empty_list 
             empty_list.append(api)
             
-            # for loop to iterate iterables in empty_list  
-            # enumerate() to return sequence in empty_list 
+            # using for loop to iterate iterables in empty_list  
+            # using enumerate() to return sequence in empty_list 
             for sublist, value in enumerate(empty_list):
                 
-                # re.search to find the exchange rate in the api 
+                # using re.search to find the exchange rate in the api 
                 forex = re.search(pattern="SGD.+", string=value)
                 
                 forex = forex.group()
@@ -67,7 +68,7 @@ def cash_on_hand_function(forex):
                 # exchange rate at position 3:10 in forex 
                 forex = float(forex[3:10])
                 
-        # range() and len() used to keep track of number of iterations to do 
+        # using range() and len() used to keep track of number of iterations to do 
             for n in range(1, len(coh_amt_list)):
             # subtract values using their index positions and appending the result of each subtraction to diff_list using .append()
                 diff_list.append(coh_amt_list[n-1] - coh_amt_list[n])

@@ -1,5 +1,6 @@
 import csv
 from pathlib import Path
+import re
 
 # creating the file path to read csv file
 fp_read = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
@@ -43,14 +44,23 @@ def overhead_function(forex):
         # highest value 
         maxValueIndex = overheads_list_USD.index(maxValue)
     
+        overheads_list = []
+        with fp_write.open(mode="r", encoding="UTF-8") as file:
+            api = file.read()
+            overheads_list.append(api)
+
+        for info, value in enumerate(overheads_list):
+            forex = re.search(pattern="SGD.+\d", string=value)
+            forex = forex.group()
+            forex = float(forex[3:10])
 
         # assign overheads_SGD as the variable used to store the overheads amount in SGD 
         # by multiplying the value with forex which is contains the currency conversion
         #overheads_SGD = maxValue*forex
         # open the summary_report txt file and use append mode 
-        with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
+    with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
             # use .write() to append the highest overheads category and value to the summary_report txt file
-            file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{maxValue}")
+            file.write(f"\n[HIGHEST OVERHEADS] {category_list[maxValueIndex]}: SGD{maxValue*forex}")
  
         
 

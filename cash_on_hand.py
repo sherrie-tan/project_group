@@ -46,8 +46,8 @@ def cash_on_hand_function(forex):
         
         api_list = []
         with fp_write.open(mode="r", encoding="UTF-8") as file:
-            api_get = file.read()
-            api_list.append(api_get)
+            api = file.read()
+            api_list.append(api)
 
             for info, value in enumerate(api_list):
                 forex = re.search(pattern="SGD.+\d", string=value)
@@ -70,7 +70,7 @@ def cash_on_hand_function(forex):
                 # item[0]: values of day_list 
                 # item[1]: values of diff_list 
                 if item[1] > 0:
-                    file.write("\n[CASH DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {coh_sgd}")
+                    file.write("\n[CASH DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {item[1]*forex}")
  
 
 print(cash_on_hand_function)

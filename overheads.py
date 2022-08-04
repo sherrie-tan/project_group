@@ -54,9 +54,9 @@ def overhead_function(forex):
         
         # using for loop to iterate iterables in empty_list  
         # enumerate() to return sequence in empty_list 
-        for info, value in enumerate(overheads_list):
+        for sublist, value in enumerate(overheads_list):
             # re.search to find the exchange rate in the api
-            forex = re.search(pattern="SGD.+\d", string=value)
+            forex = re.search(pattern="SGD.+", string=value)
             forex = forex.group()
             # exchange rate at position 3:10 in forex
             forex = float(forex[3:10])

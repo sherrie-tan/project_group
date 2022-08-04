@@ -67,15 +67,25 @@ def profitloss_function(forex):
             forex = forex.group()
             # exchange rate at position 3:10 in forex
             forex = float(forex[3:10])
-
+        # create empty list to store api 
         profitloss_list = []
+        
+        # open txt file as read mode to append api into it 
         with fp_write.open(mode="r", encoding="UTF-8") as file:
+            
+            # assign api to file.read(api)
             api = file.read()
+            # append the api into empty_list
             profitloss_list.append(api)
-
-        for info, value in enumerate(profitloss_list):
-            forex = re.search(pattern="SGD.+\d", string=value)
+        
+        # for loop to iterate iterables in empty_list  
+        # enumerate() to return sequence in empty_list
+        for sublist, value in enumerate(profitloss_list):
+            
+            # re.search to find the exchange rate in the api
+            forex = re.search(pattern="SGD.+", string=value)
             forex = forex.group()
+            #  exchange rate at position 3:10 in forex 
             forex = float(forex[3:10])
 
     # using .open() to open summary_report.txt file to append profit deficit into it 

@@ -15,7 +15,8 @@ def api_function():
         forex = float(CURRENCY_EXCHANGE_RATE[value]["5. Exchange Rate"])
         from_currency = CURRENCY_EXCHANGE_RATE[value]["1. From_Currency Code"]
         to_currency = CURRENCY_EXCHANGE_RATE[value]["3. To_Currency Code"]
-
+    
+    
 
     
 

@@ -1,5 +1,5 @@
 # import csv and Path from pathlib
-import csv
+import csv, re
 from pathlib import Path
 
 # assign fp_read to Cash on Hand.csv file to read data in csv file
@@ -44,11 +44,23 @@ def cash_on_hand_function(forex):
         # create empty list to store difference calculated in coh amount 
         diff_list = []
         
+        api_list = []
+        with fp_write.open(mode="r", encoding="UTF-8") as file:
+            api_get = file.read()
+            api_list.append(api_get)
+
+            for info, content in enumerate(api_list):
+                forex = re.search(pattern="SGD.+\d", string=content)
+                forex = forex.group()
+                forex = float(forex[3:10])
+                
+ 
         # range() and len() used to keep track of number of iterations to do 
-        for n in range(1, len(coh_amt_list)):
+            for n in range(1, len(coh_amt_list)):
             # subtract values using their index positions and appending the result of each subtraction to diff_list using .append()
-            diff_list.append(coh_amt_list[n-1] - coh_amt_list[n])
-        
+                diff_list.append(coh_amt_list[n-1] - coh_amt_list[n])
+                coh_sgd = diff_list[-1] * forex
+    
     # .open() to open summary_report.txt to append cash deficit into it 
     with fp_write.open(mode="a", encoding="UTF-8", newline="") as file:
             
@@ -59,10 +71,10 @@ def cash_on_hand_function(forex):
                 # item[0]: values of day_list 
                 # item[1]: values of diff_list 
                 if item[1] > 0:
-                    file.write("\n[CASH DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {item[1]}")
+                    file.write("\n[CASH DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {item[1]*forex}")
+ 
 
-
-
+print(cash_on_hand_function)
 
 
 

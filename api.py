@@ -38,7 +38,7 @@ def api_function():
     fp = Path.cwd()/"project_group"/"summary_report.txt"
     
     # using .open() to open summary_report.txt
-    # opening file in read mode to read the file
+    # opening file in read mode 'r' to read the file
     with fp.open(mode="w", encoding="UTF-8",newline="") as file:
         # using .write() to write in from_currency, to_currency and forex
         file.write("[REAL TIME CURRENCY CONVERSION RATE]" " "f"{from_currency}1 = {to_currency}{forex}")

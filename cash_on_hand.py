@@ -70,7 +70,7 @@ def cash_on_hand_function(forex):
                 # item[0]: values of day_list 
                 # item[1]: values of diff_list 
                 if item[1] > 0:
-                    file.write("\n[CASH DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {item[1]*forex}")
+                    file.write("\n[CASH DEFICIT]" " "f"DAY: {item[0]+1}" "," " "f"AMOUNT: SGD {coh_sgd}")
  
 
 print(cash_on_hand_function)
